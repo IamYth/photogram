@@ -14,6 +14,15 @@ class User extends BaseUser
         return $query;
     }
 
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
     public function addUserFilter($query, $params)
     {
         /* EXAMPLE
