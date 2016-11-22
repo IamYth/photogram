@@ -38,7 +38,7 @@ Photo:
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
+            inversedBy: photo
             joinColumns:
                 user_id:
                     referencedColumnName: id
@@ -48,7 +48,7 @@ Photo:
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
+            inversedBy: photo
             joinColumns:
                 album_id:
                     referencedColumnName: id

@@ -12,4 +12,9 @@ class Album extends Model
     protected $fillable = [
         'alname',
     ];
+
+    public function photo()
+    {
+        return $this->hasMany('App\Model\Photo\photo', 'album_id', 'id');
+    }
 }

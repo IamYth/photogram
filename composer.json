@@ -13,7 +13,8 @@
         "laravel/framework": "5.3.*",
         "doctrine/orm": "^2.5",
         "dom1no/scaffold": "dev-master#c84a8367fba4840c77884580525aa62a2a82f49c",
-        "barryvdh/laravel-debugbar": "^2.3"
+        "barryvdh/laravel-debugbar": "^2.3",
+        "twbs/bootstrap": "^3.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

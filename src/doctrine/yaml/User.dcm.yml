@@ -48,4 +48,11 @@ User:
             type: datetime
             nullable: true
             column: updated_at
+
+    oneToMany:
+            photo:
+                targetEntity: photo
+                mappedBy: user
+
+
     lifecycleCallbacks: {  }

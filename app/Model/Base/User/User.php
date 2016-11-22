@@ -15,4 +15,9 @@ class User extends Model
         'password',
         'remember_token',
     ];
+
+    public function photo()
+    {
+        return $this->hasMany('App\Model\Photo\photo', 'user_id', 'id');
+    }
 }
