@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'Photogram',
 
     /*
     |--------------------------------------------------------------------------
@@ -180,6 +180,7 @@ return [
 
         Dom1no\Scaffold\GeneratorsServiceProvider::class,
 
+        Intervention\Image\ImageServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
     ],
@@ -230,7 +231,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

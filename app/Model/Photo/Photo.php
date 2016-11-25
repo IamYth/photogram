@@ -32,4 +32,13 @@ class Photo extends BasePhoto
 
         return $query;
     }
+
+    public function src($dir, $absolute = false)
+    {
+        $src = [];
+        $src[] = $this->album_id;
+        $src[] = $dir;
+        $src[] = $this->name;
+        return (($absolute) ? public_path(): '') . '/photo/album/' . implode('/', $src);
+    }
 }

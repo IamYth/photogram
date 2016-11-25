@@ -10,10 +10,10 @@ use Illuminate\Http\Request;
 class UserController extends Controller {
     
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }    
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }    
 
 
 
@@ -26,19 +26,19 @@ class UserController extends Controller {
         ]);
     }
 
-    public function create()
-    {
-        return view('user.user.create');
-    }
+    // public function create()
+    // {
+    //     return view('user.user.create');
+    // }
 
-    public function save(Request $request)
-    {
-        $user = new User($request->all());
+    // public function save(Request $request)
+    // {
+    //     $user = new User($request->all());
 
-        $user->save();
+    //     $user->save();
 
-        return redirect()->route('user.index');
-    }
+    //     return redirect()->route('user.index');
+    // }
 
     public function edit($id)
     {
@@ -49,20 +49,14 @@ class UserController extends Controller {
         ]);
     }
 
-    public function update(Request $request, $id)
-    {
-        $user = User::find($id);
+    // public function update(Request $request, $id)
+    // {
+    //     $user = User::find($id);
 
-        $user->update($request->all());
+    //     $user->update($request->all());
 
-        return redirect()->route('user.index');
-    }
+    //     return redirect()->route('user.index');
+    // }
 
-    public function delete($id)
-    {
-        $user = User::where('id', '=', $id);
-        $user->delete();
 
-        return redirect()->back();
-    }
 }

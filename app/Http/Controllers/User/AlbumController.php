@@ -7,37 +7,44 @@ use App\Http\Controllers\Controller;
 use App\Model\Album\Album;
 use Illuminate\Http\Request;
 
+use Intervention\Image\ImageManager as Image;
+
 class AlbumController extends Controller {
 
     public function index()
     {
-        $album = Album::orderBy('id', 'desc')->paginate(10);
+       $album = Album::orderBy('id', 'desc')->paginate(10);
 
-        return view('album.album.index', [
-            'album' => $album
-        ]);
+        return view('profile.album.index');
     }
 
     public function create()
     {
-        return view('album.album.create');
+       return view('profile.album.edit'); 
     }
 
     public function save(Request $request)
     {
-        $album = new Album($request->all());
+        $album = new Album;
+
+        $album->alname = $request->name;
 
         $album->save();
 
-        return redirect()->route('album.index');
+        return view('profile.album.edit', [
+            'album' => $album
+            ]);
     }
 
     public function edit($id)
     {
         $album = Album::find($id);
 
-        return view('album.album.edit', [
-            'album' => $album
+        $photo = $album->photo()->get();
+
+        return view('profile.album.edit', [
+            'album' => $album,
+            'photo' => $album
         ]);
     }
 
